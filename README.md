@@ -17,6 +17,9 @@ kubectl create deploy --image=nginx nginx --dry-run=client -o yaml > nginx-deplo
 ### Create daemonset
 To create a daemonset, use Create deployment template file and change the kind and remove replicas & strategy.
 
+### Create PV
+kubectl apply -f https://k8s.io/examples/pods/storage/pv-volume.yaml
+
 ### Create service
 kubectl expose pod valid-pod --port=444 --name=frontend
 
