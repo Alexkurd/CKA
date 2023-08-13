@@ -1,5 +1,20 @@
 # CKA
 
+### Information
+
+25 Tasks. 2 hours.
+3 clusters. ControlPlane + 2 Nodes.
+
+### Pre-setup
+
+Add to .bashrc
+
+alias k=kubectl                         # will already be pre-configured
+
+export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do
+
+export now="--force --grace-period 0"   # k delete pod x $now
+
 ## Create resources
 
 ### Create pod
