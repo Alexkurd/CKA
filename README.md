@@ -15,6 +15,20 @@ export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $d
 
 export now="--force --grace-period 0"   # k delete pod x $now
 
+## Get infomation
+
+### Get nodes CIDR
+k get nodes -o jsonpath={".items[*].spec.podCIDR"}
+
+k get nodes -o json | jq ".items[].spec.podCIDR"
+
+### Get nodes osImage
+k get nodes -o jsonpath={".items[*].status.nodeInfo.osImage"}
+
+k get nodes -o json | jq ".items[].status.nodeInfo.osImage"
+
+
+
 ## Create resources
 
 ### Create pod
