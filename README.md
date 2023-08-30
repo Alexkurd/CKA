@@ -2,8 +2,8 @@
 
 ### Information
 
-25 Tasks. 2 hours.
-3 clusters. ControlPlane + 2 Nodes.
+15-20 Tasks. 17 for me. 2 hours.
+~ 3 clusters. Context change commands are given. ControlPlane + 2 Nodes.
 
 ### Pre-setup
 
@@ -11,9 +11,9 @@ Add to .bashrc
 
 alias k=kubectl                         # will already be pre-configured
 
-export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do
+export do="--dry-run=client -o yaml"    # k create deploy nginx --image=nginx $do //useful
 
-export now="--force --grace-period 0"   # k delete pod x $now
+export now="--force --grace-period 0"   # k delete pod x $now //not very
 
 ## Get infomation
 
@@ -58,6 +58,9 @@ kubectl create configmap app-config --from-literal=env=dev
 ### Create secret app-secret with pass=123:
 kubectl create secret generic app-secret --from-literal=pass=123
 
+### Network policy
+
+### Scale
 
 ## Cluster maintenance
 
@@ -78,3 +81,7 @@ kubeadm upgrade node
 apt-get install -y kubelet=1.26.0-00 kubectl=1.26.0-00
 systemctl daemon-reload
 systemctl restart kubelet
+
+### ETCD
+1. snapshot
+2. restore
